@@ -7,7 +7,7 @@ PKG ?= $(if $(YARN),$(YARN),$(NODE) $(shell which npm))
 
 .PHONY:
 
-all: .PHONY
+all: clean .PHONY
 	babel src -d dist --source-maps
 
 configure: .PHONY
@@ -22,3 +22,6 @@ start: .PHONY
 
 lint: .PHONY
 	eslint src test
+
+clean: .PHONY
+	rimraf dist
