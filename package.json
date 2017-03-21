@@ -5,7 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node dist/index"
+    "start": "node dist/index",
+    "build": "babel src -d dist --source-maps",
+    "watch": "babel-watch src/index",
+    "start": "node dist/index",
+    "lint": "eslint src test",
+    "clean": "rimraf dist"
   },
   "repository": {
     "type": "git",
